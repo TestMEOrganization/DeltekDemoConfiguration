@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ServerConfig:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ServerConfig="http:///com/maconomy/tools/maconomyextender/configuration/model/serverconfig.ecore" defaultServer="//@servers.0" configVersion="2">
+  <servers host="" port="22" userid="" id="Development" name="Development server" description="A development Maconomy server under repository control. The server is used for testing revisions from the server repository. It does not keep an install history and it does not requires tagged commits." hostInstallPath="" installPath="" accessType="NotAccessible" hasHistory="false" requiresInstallTag="false"/>
+  <servers id="ReleaseTest" name="Release Test Server" description="Server for deploying and testing commits from a release branch. Tagging commits is not necessary, but an install history is kept" accessType="NotAccessible" requiresInstallTag="false"/>
+  <servers id="PreLive" name="Pre Live Server" description="Server for deploying version tagged commits from master branch for End User testing. " accessType="NotAccessible" promoteTo="//@servers.3"/>
+  <servers id="Live" name="Live Server" description="The Live or Production server. Commits should not be deployed directly, but should be promoted from the Pre Live Server after end user verification" accessType="NotAccessible" deployAllowed="false" promoteFrom="//@servers.2"/>
+</ServerConfig:Configuration>
